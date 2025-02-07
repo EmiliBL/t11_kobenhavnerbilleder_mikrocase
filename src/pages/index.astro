@@ -8,38 +8,48 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
 
 <MainLayout title="Titel">
     <!-- Hero section -->
-<section class="">
-  <img src="/src/assets/hero-openbook.webp" alt=""> 
+<section class="grid grid-cols-2">
+<div>
+  <img src="/src/assets/hero.webp" alt="hero"> 
+</div>
+
+<div>
 <h1 class="text-4xl font-bold">
     Københavnerbilleder  - en guide til hipster foto</h1>
-    <h2 class="text-2xl font-medium"> af Sten Simons</h2>
+<h2 class="text-2xl font-medium"> af Sten Simons</h2>
 
 <div class="p-4">
     <label for="email">Mail*</label>
     <input type="email" id="email" name="email" placeholder="Skriv din mail her">
+    <p>*Jeg accepterer at modtage prøvekapitlet og modtage markedsføring om bogen ved at downloade prøvekapitlet.</p>
 </div>
 
 <div class="flex justify-end">
     <Button variant="primary" size="medium">Hent prøvekapitel</Button>
 </div>
-<p>*Jeg accepterer at modtage prøvekapitlet og modtage markedsføring om bogen ved at downloade prøvekapitlet.</p>
+
+
+</div>
 </section>	
 
 <!-- section facts -->
- <section class="">
-<h2>Kort om bogen</h2>
-<p>Københavnerbilleder er de danske streetfotografers bibel: Det er en fusion mellem et kunstværk og en lærebog. Bogen gennemgår alle væsentlige aspekter af streetfotografering fra grundlæggende teknik til kreative eksperimenter. Alt sammen krydret med masser af inspirerende fotos. God læselyst!	 
-</p>
-
-<div>
-    <ul>Titel: Københavnerbilleder - en guide til hipster foto</ul>
-    <ul>Forfatter: Sten Simons</ul>
-    <ul>Antal sider: 344</ul>
-    <ul>Forlag: Mellem Linjerne</ul>
-    <ul>ISBN: 987-6-987654-32-1</ul>
-    <ul>Pris: 399.-</ul>
-</div>
- </section>
+<section id="kurset" class="mt-32 grid lg:grid-cols-2 prose mx-auto gap-4">
+    <article  >
+        <h2 class="animate__animated animate__bounceInLeft text-4xl">Kort om bogen</h2>
+        <p>Københavnerbilleder er de danske streetfotografers bibel: Det er en fusion mellem et kunstværk og en lærebog. Bogen gennemgår alle væsentlige aspekter af streetfotografering fra grundlæggende teknik til kreative eksperimenter. Alt sammen krydret med masser af inspirerende fotos. God læselyst!</p>
+    </article>
+    <article >
+        <h2 class="text-4xl animate__animated animate__bounceInRight">Facts</h2>
+        <ul>
+            <li>Titel: Københavnerbilleder - en guide til hipster foto</li>
+            <li>Forfatter: Sten Simons</li>
+            <li>Antal sider: 344</li>
+            <li>Forlag: Mellem Linjerne</li>
+            <li>ISBN: 987-6-987654-32-1</li>
+            <li>Pris: 399.-</li>
+        </ul>
+    </article>
+</section>
 
  <!-- fotos af bogen -->
   <section class="">
