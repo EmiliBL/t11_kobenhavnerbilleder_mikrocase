@@ -2,24 +2,43 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
-import { Image } from "astro:assets";
+/* import { Image } from 'astro:assets';
+import hero-openbook from '../../public/hero-openbook.jpg'; */
 ---
 
 <MainLayout title="Titel">
     <!-- Hero section -->
 <section class="">
-    <Image src="../assets/hero-openbook.jpg" alt="hero" width={300} height={200} />
-<h1></h1>
-<p></p>
-<button></button>
-<button></button>
-<p></p>
+  <!--   <img src="/public/" alt=""> -->
+<h1 class="text-4xl font-bold">
+    Københavnerbilleder  - en guide til hipster foto</h1>
+    <h2 class="text-2xl font-medium"> af Sten Simons</h2>
+
+<div class="p-4">
+    <label for="email">Mail*</label>
+    <input type="email" id="email" name="email" placeholder="Skriv din mail her">
+</div>
+
+<div class="flex justify-end">
+    <Button variant="primary" size="medium">Hent prøvekapitel</Button>
+</div>
+<p>*Jeg accepterer at modtage prøvekapitlet og modtage markedsføring om bogen ved at downloade prøvekapitlet.</p>
 </section>	
 
 <!-- section facts -->
  <section class="">
-<h2></h2>
-<h3></h3>
+<h2>Kort om bogen</h2>
+<p>Københavnerbilleder er de danske streetfotografers bibel: Det er en fusion mellem et kunstværk og en lærebog. Bogen gennemgår alle væsentlige aspekter af streetfotografering fra grundlæggende teknik til kreative eksperimenter. Alt sammen krydret med masser af inspirerende fotos. God læselyst!	 
+</p>
+
+<div>
+    <ul>Titel: Københavnerbilleder - en guide til hipster foto</ul>
+    <ul>Forfatter: Sten Simons</ul>
+    <ul>Antal sider: 344</ul>
+    <ul>Forlag: Mellem Linjerne</ul>
+    <ul>ISBN: 987-6-987654-32-1</ul>
+    <ul>Pris: 399.-</ul>
+</div>
  </section>
 
  <!-- fotos af bogen -->
@@ -32,69 +51,71 @@ import { Image } from "astro:assets";
   <!-- Uddrag af bog -->
    <section class="">
     <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h2>Uddrag for bogen</h2>
+    <h3>Kapitel 1 - Intro til street foto</h3>
+    <p>Hvad er street foto? Det handler i bund og grund om at skyde byens liv og byens geometri (urban geometry). I dette kapitel får du en grundig intro til hvad street foto er og et overblik over nogen af de kendte street-fotografer. Alt krydret med en masse gode eksempler på street fotos.</p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 2 - Om at skyde street</h3>
+    <p>Vil du skyde street? Så er der ikke nogen vej udenom: Du skal ud på gaderne og prøve det! I dette kapitel får du en teknisk indføring i hvordan du bedst skyder street. Uanset om du er begynder eller professionel, er der mange gode tekniske tips og tricks til street-skyderiet.
+    </p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 3 - Om at finde det rette motiv</h3>
+    <p>Indimellem er man heldig, andre gange kommer man hjem helt uden gode motiver. Med et par tips og tricks til at finde de rette motiver, stiger chancen gevaldigt for at fange de gode motiver.</p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 4 - Digital street foto</h3>
+    <p>De fleste af os skyder oftest digitalt fordi det er billigere og nemmere. Og nogen teknikker og fremgangsmåder egner sig kun til digital street foto. I dette kapitel får du en række tips og tricks til digital street-foto.</p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 5 - Analog street foto</h3>
+    <p>Analog er sejt fordi det er mere “ægte,” dyrere og mere besværligt end digital. Det signalerer entusiasme. Nogle teknikker og fremgangsmåder egner sig bedst til analog street foto. I dette kapitel får du en række tips og tricks til analog street-foto. </p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 6 - Om at skyde sort/hvid    </h3>
+    <p>Alle street-fotografer skyder sort/hvid nu og da. Nogen altid. Hvorfor? Hvad er der specielt ved sort/hvid fotografering, og hvad adskiller sort/hvid fra farvefotografering? Her får du en række tips og tricks til sort/hvid fotografering. </p>
 </div>
 
 <div class="">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
+    <h3>Kapitel 7 - Kreative teknikker </h3>
+    <p>Dobbelteksponeringer, ICM (intentional camera moves), smadrede objektiver, gamle filmruller og alle mulige andre, spændende kreative teknikker kan løfte dine fotografier fra at være kedelige dokumentationer af hverdagen til at blive vilde kunststykker. Så dyk ned i dette kapitel om eksperimenterende teknikker!</p>
+</div>
+
+<div class="">
+    <h3>Kapitel 8 - Kom helt tæt på! </h3>
+    <p>Street foto handler om at fotografere livet på gaden - men tør du at gå helt tæt på fremmede mennesker og knipse løs? Du kan lige så godt øve dig, for det er det der vil gøre dig til en bedre street-fotograf…</p>
 </div>
    </section>
 
    <!-- Anmeldelser -->
     <section class="">
         <div class="">
-        <h2></h2>
+        <h2>Anmeldelser</h2>
         <!-- animation af stjerne -->
-         <p></p>
-         <p></p>
-        </div>
+         <p>Københavnerbilleder er en grundig introduktion til at skyde billeder med retro-kant. Hvad enten du er har arbejdet med foto siden 135-filmen kom på markedet, du kun har skudt digitalt eller er helt nybegynder, er der masser af tips og tricks i bogen.
+        <br> Hanne Hovgaard, Berlingeren 
+    </p>
+         </div>
     
         <div class="">
-            <h2></h2>
-            <!-- animation af stjerne -->
-             <p></p>
-             <p></p>
+   <!-- animation af stjerne -->
+             <p>Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog?
+                <br>Kim Kloggaard, Fotojournalen.dk
+                </p>
+             
             </div>
 
             <div class="">
-                <h2></h2>
                 <!-- animation af stjerne -->
-                 <p></p>
-                 <p></p>
+                 <p>Sten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde.
+                    <br>Volmer Hansen, Lukkertiden.dk 
+                    </p>
                 </div>
     </section>
 
@@ -131,27 +152,23 @@ import { Image } from "astro:assets";
 
 <!-- Formular -->
 <section  id="tilmelding" class="max-w-lg mx-auto mt-32 p-4">
-    <h2 class="text-4xl font-bold pb-4">Tilmeld dig</h2>
+    <h2 class="text-4xl font-bold pb-4">Køb Københavnerbilleder nu!</h2>
     <form class="space-y-4 grid grid-cols-1 gap-6">
 
         <div class="">
-            <label for="kursusgang">Kursusgang:</label>					
-            <select name="kursusgang" id="kursusgang">
-                <option value="oktober">Oktober 2024</option>
-                <option value="december">December 2024</option>
-                <option value="februar">Februar 2025</option>
+            <label for="antal">Antal:</label>					
+            <select name="antal" id="antal">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="2">3</option>
             </select>
         </div>
 
         <div class="">
-            <span>Betaling:</span>
-            <input type="radio" id="forud" name="levering" checked="checked">
-            <label for="forud">Forudbetaling</label>
-            <input type="radio" id="kredit" name="levering">
-            <label for="kredit">Kredit</label>
-            <input type="radio" id="kontant" name="levering">
-            <label for="kontant">Kontant</label>
-            
+            <input type="radio" id="levering" name="levering" checked="checked">
+            <label for="levering">Levering</label>
+            <input type="radio" id="afhent" name="afhent">
+            <label for="afhent">Afhent</label>
         </div>
     
         <div class="grid gap-3">
@@ -162,6 +179,11 @@ import { Image } from "astro:assets";
         <div class="grid gap-3">
             <label for="adresse">Adresse:</label>
             <input type="text" id="adresse" name="adresse" placeholder="Paradisæblevej 8">
+        </div>
+
+        <div class="grid gap-3">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="lars@larsen.dk">
         </div>
 
         <div class="grid gap-3 grid-cols-6">
@@ -177,11 +199,11 @@ import { Image } from "astro:assets";
 
         <div class="">
             <input type="checkbox" id="nyhedsbrev" name="nyhedsbrev">
-            <label for="nyhedsbrev">Ja tak til nyhedsbreve og tilbud</label>
+            <label for="nyhedsbrev">Ja tak tilbud!</label>
         </div>
 
         <div class="flex justify-end">
-            <Button variant="primary" size="medium">Til betaling</Button>
+            <Button variant="primary" size="medium">KØB!</Button>
         </div>
     </form>
 </section>
