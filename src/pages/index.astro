@@ -4,44 +4,51 @@ import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 /* import { Image } from 'astro:assets';
 import hero-openbook from '../../public/hero-openbook.jpg'; */
+import { Image } from 'astro:assets';
+/* Gør at man hiver fast i assets billede. *=referer til fang alle billeder i fx galleri mappen.Så vil den hive fat i alle billederne og arrangere dem */
+const images = Object.values(
+  import.meta.glob("/src/assets/images/galleri/*", { eager: true })
+).map(file => file.default);
 ---
 
 <MainLayout title="Titel">
     <!-- Hero section -->
-<section class="grid grid-cols-2">
+<section class="gap-8 grid md:grid-cols-2 lg:mt-24">
 <div>
   <img src="/src/assets/hero.webp" alt="hero"> 
 </div>
 
-<div>
+<div class="content-center">
 <h1 class="text-4xl font-bold">
     Københavnerbilleder  - en guide til hipster foto</h1>
 <h2 class="text-2xl font-medium"> af Sten Simons</h2>
 
+<!-- Link & bottom -->
+<div class="grid grid-cols-2 align-bottom mt-10 ">
 <div class="p-4">
     <label for="email">Mail*</label>
     <input type="email" id="email" name="email" placeholder="Skriv din mail her">
-    <p>*Jeg accepterer at modtage prøvekapitlet og modtage markedsføring om bogen ved at downloade prøvekapitlet.</p>
+    <p class="font-light text-xs">*Jeg accepterer at modtage prøvekapitlet og modtage markedsføring om bogen ved at downloade prøvekapitlet.</p>
 </div>
 
 <div class="flex justify-end">
     <Button variant="primary" size="medium">Hent prøvekapitel</Button>
 </div>
-
+</div>
 
 </div>
 </section>	
 
 <!-- section facts -->
-<section id="kurset" class="mt-32 grid lg:grid-cols-2 prose mx-auto gap-4">
-    <article  >
+<section id="kurset" class="mt-20 grid lg:grid-cols-2 prose mx-auto">
+    <article class="pr-20">
         <h2 class="animate__animated animate__bounceInLeft text-4xl">Kort om bogen</h2>
         <p>Københavnerbilleder er de danske streetfotografers bibel: Det er en fusion mellem et kunstværk og en lærebog. Bogen gennemgår alle væsentlige aspekter af streetfotografering fra grundlæggende teknik til kreative eksperimenter. Alt sammen krydret med masser af inspirerende fotos. God læselyst!</p>
     </article>
     <article >
         <h2 class="text-4xl animate__animated animate__bounceInRight">Facts</h2>
         <ul>
-            <li>Titel: Københavnerbilleder - en guide til hipster foto</li>
+            <li>Titel: Københavnerbilleder <br> - en guide til hipster foto</li>
             <li>Forfatter: Sten Simons</li>
             <li>Antal sider: 344</li>
             <li>Forlag: Mellem Linjerne</li>
@@ -62,10 +69,10 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
   <div class="uddrag">
     <section class="mt-32" id="uddrag">
         <h2 class="text-4xl font-bold">Uddrag for bogen</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 mx-auto mt-4 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 mx-auto mt-4 gap-16 pt-10">
             <article class="prose animate__animated animate__bounceInRight">
                 <h3 class="text-xl animate_animated animate__flip">Kapitel 1 - Intro til street foto</h3>
-<p>Hvad er street foto? Det handler i bund og grund om at skyde byens liv og byens geometri (urban geometry). I dette kapitel får du en grundig intro til hvad street foto er og et overblik over nogen af de kendte street-fotografer. Alt krydret med en masse gode eksempler på street fotos.</p>
+                <p>Hvad er street foto? Det handler i bund og grund om at skyde byens liv og byens geometri (urban geometry). I dette kapitel får du en grundig intro til hvad street foto er og et overblik over nogen af de kendte street-fotografer. Alt krydret med en masse gode eksempler på street fotos.</p>
             </article>
             <article class="prose">
                 <h3 class="text-xl">Kapitel 2 - Om at skyde street</h3>
@@ -100,20 +107,20 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
    <!-- Anmeldelser -->
    <section class="mt-32">
     <h2 class="text-4xl font-bold">Anmeldelser</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 mx-auto gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-3 mx-auto gap-4 pt-10">
         <article class="prose mb-6">
             <span class="font-bold">5 af 6 stjerner</span>
-            <p>Københavnerbilleder er en grundig introduktion til at skyde billeder med retro-kant. Hvad enten du er har arbejdet med foto siden 135-filmen kom på markedet, du kun har skudt digitalt eller er helt nybegynder, er der masser af tips og tricks i bogen.</p>
+            <p class="pr-10">Københavnerbilleder er en grundig introduktion til at skyde billeder med retro-kant. Hvad enten du er har arbejdet med foto siden 135-filmen kom på markedet, du kun har skudt digitalt eller er helt nybegynder, er der masser af tips og tricks i bogen.</p>
             <p class="italic">Hanne Hovgaard, Berlingeren </p>
         </article>
         <article class="prose mb-6">
             <span class="font-bold">4 af 6 stjerner</span>
-            <p>Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog?</p>
+            <p class="pr-10">Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog?</p>
             <p class="italic">Kim Kloggaard, Fotojournalen.dk</p>
         </article>
         <article  class="prose mb-6">
             <span class="font-bold">6 af 6 stjerner</span>
-            <p>JSten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde..</p>
+            <p class="pr-10">JSten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde..</p>
             <p class="italic">Volmer Hansen, Lukkertiden.dk </p>
         </article>
     </div>
@@ -139,23 +146,22 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
     </section> -->
 
 <!-- Forfatteren -->
-<section id="forfatter" class="grid lg:grid-cols-2 mt-32 max-w-3xl mx-auto gap-6"> 
-    <div>
-       <!--Image src={} alt="kobenhavn" class=""  -->
+<section id="forfatter" class="grid lg:grid-cols-2 mt-32 max-w-3xl mx-auto gap-20 align-bottom"> 
+    <div class="rounded-sm">
+       <img class="rounded-2xl" src="/src/assets/forfatter.webp" alt="forfatter">
     </div>
-    <article class="prose">
-        <h2 class="text-4xl">Forfatteren</h2>
-        <p> Sten Simons har en lang foto-karriere bag sig. Det hele startede i 00’erne, da han gik rundt i Pisserenden for at fotografere ungdommens forfald. Det ledte til en række udstillinger, og blev senere til hans først fotobog “Ungdomsdruk - pinlige billeder fra nattelivet.”
-            Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>		
+    <article class="prose text-wrap">
+        <h2 class="text-4xl">Sten Simons</h2>
+        <p class=""> Sten Simons har en lang foto-karriere bag sig. Det hele startede i 00’erne, da han gik rundt i Pisserenden for at fotografere ungdommens forfald. Det ledte til en række udstillinger, og blev senere til hans først fotobog “Ungdomsdruk - pinlige billeder fra nattelivet.” Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>		
     </article>
 </section>
 
 <!-- Formular -->
-<section  id="tilmelding" class="max-w-lg mx-auto mt-32 p-4">
+<section  id="tilmelding" class="max-w-lg mx-auto mt-32 p-2 rounded-sm">
     <h2 class="text-4xl font-bold pb-4">Køb Københavnerbilleder nu!</h2>
-    <form class="space-y-4 grid grid-cols-1 gap-6">
+    <form class="space-y-4 grid grid-cols-1 gap-2">
 
-        <div class="">
+        <div class="rounded-sm">
             <label for="antal">Antal:</label>					
             <select name="antal" id="antal">
                 <option value="1">1</option>
@@ -171,28 +177,28 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
             <label for="afhent">Afhent</label>
         </div>
     
-        <div class="grid gap-3">
+        <div class="grid gap-1">
             <label for="navn">Navn:</label>
             <input type="text" id="navn" name="navn" placeholder="Anders And">
         </div>
 
-        <div class="grid gap-3">
+        <div class="grid gap-1">
             <label for="adresse">Adresse:</label>
             <input type="text" id="adresse" name="adresse" placeholder="Paradisæblevej 8">
         </div>
 
-        <div class="grid gap-3">
+        <div class="grid gap-1">
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" placeholder="lars@larsen.dk">
         </div>
 
-        <div class="grid gap-3 grid-cols-6">
+        <div class="grid gap-1 grid-cols-6">
             <label for="postnummer" class="col-span-6">Postnummer & by:</label>
             <input type="text" id="postnummer" name="postnummer" class="col-span-2" placeholder="0900">
             <input type="text" id="bynavn" name="bynavn" disabled class="col-span-4" placeholder="Andeby C">
         </div>
 
-        <div class="grid gap-3">
+        <div class="grid gap-1">
             <label for="telefon">Telefon:</label>
             <input type="tel" id="telefon" name="telefon" placeholder="555-555">
         </div>
@@ -203,7 +209,7 @@ import hero-openbook from '../../public/hero-openbook.jpg'; */
         </div>
 
         <div class="flex justify-end">
-            <Button variant="primary" size="medium"></Button>
+            <Button variant="primary" size="medium">KØB</Button>
         </div>
     </form>
 </section>
